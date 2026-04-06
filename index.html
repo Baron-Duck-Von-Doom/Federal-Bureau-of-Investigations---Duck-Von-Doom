@@ -60,6 +60,10 @@
       box-shadow: inset 0 0 0 3px rgba(255,255,255,.12);
     }
 
+    .agency-title {
+      line-height: 1.2;
+    }
+
     .agency-title small {
       display: block;
       font-size: 0.76rem;
@@ -98,11 +102,33 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.08);
     }
 
+    .feature {
+      overflow: hidden;
+    }
+
     .feature-header {
       background: linear-gradient(180deg, var(--blue), var(--navy));
       color: #fff;
       padding: 14px 18px;
       border-bottom: 4px solid var(--gold);
+    }
+
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      opacity: .85;
+      margin-bottom: 6px;
+    }
+
+    h1, h2, h3 { margin: 0; }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: .02em;
     }
 
     .feature-body {
@@ -120,6 +146,7 @@
 
     .stamp-row {
       display: flex;
+      flex-wrap: wrap;
       gap: 12px;
       margin-top: 18px;
     }
@@ -128,11 +155,12 @@
       border: 2px solid var(--red);
       color: var(--red);
       padding: 10px 14px;
-      font-family: Arial;
+      font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: .08em;
       transform: rotate(-2deg);
+      background: rgba(155,28,28,.04);
     }
 
     .profile-card {
@@ -141,7 +169,6 @@
       padding: 18px;
     }
 
-    /* 🔥 UPDATED MUGSHOT */
     .mugshot {
       aspect-ratio: 1 / 1;
       background: #000;
@@ -149,12 +176,14 @@
       display: grid;
       place-items: center;
       margin-bottom: 14px;
+      overflow: hidden;
     }
 
     .mugshot img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .badge {
@@ -162,7 +191,7 @@
       padding: 6px 10px;
       background: #111;
       color: #fff;
-      font-family: Arial;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .8rem;
       text-transform: uppercase;
       letter-spacing: .12em;
@@ -173,8 +202,9 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 0.95rem;
+      color: #202733;
     }
 
     .facts li {
@@ -182,11 +212,19 @@
       padding: 10px 0;
       display: flex;
       justify-content: space-between;
+      gap: 16px;
+    }
+
+    .facts span:first-child {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      font-size: .76rem;
     }
 
     .content {
       max-width: 1120px;
-      margin: 0 auto;
+      margin: 0 auto 34px;
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -197,84 +235,179 @@
       background: #f8f7f2;
       border-bottom: 3px solid var(--gold);
       padding: 14px 16px;
+      font-size: 1.15rem;
       text-transform: uppercase;
+      letter-spacing: .05em;
     }
 
     .section-body {
       padding: 16px;
+      line-height: 1.65;
+      font-size: 1rem;
+      min-height: 250px;
+    }
+
+    .section-body ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .callout {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: #fbfaf6;
+      border-left: 4px solid var(--gold);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #344155;
+    }
+
+    .ticker {
+      max-width: 1120px;
+      margin: 0 auto 28px;
+      padding: 0 20px;
+    }
+
+    .ticker-inner {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 16px;
+      border-left: 6px solid var(--red);
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
     }
 
     .footer {
       background: #101b2d;
       color: #d7dfed;
-      padding: 22px;
+      padding: 22px 20px 40px;
       margin-top: 20px;
       border-top: 4px solid var(--gold);
     }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      font-size: .92rem;
+    }
+
+    .muted {
+      color: #c7d2e3;
+      opacity: .88;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .content, .feature-body {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
-
 <body>
-
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="seal-wrap">
-      <div class="seal">🦆</div>
-      <div class="agency-title">
-        <small>Public Field Intelligence Archive</small>
-        <strong>Baron Duck Von Doom Case File</strong>
-      </div>
-    </div>
-    <div class="status">Status: Active</div>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-  <article class="panel feature">
-    <div class="feature-header">
-      <h1>Baron Duck Von Doom</h1>
-    </div>
-
-    <div class="feature-body">
-
-      <div>
-        <p class="summary">
-          A masked duck sovereign and agent of correction. He does not conquer—he reveals what was never gone.
-        </p>
-
-        <div class="stamp-row">
-          <div class="stamp">Observed</div>
-          <div class="stamp">Marked</div>
-          <div class="stamp">Active</div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="seal-wrap">
+        <div class="seal">🦆</div>
+        <div class="agency-title">
+          <small>Public Field Intelligence Archive</small>
+          <strong>Baron Duck Von Doom Case File</strong>
         </div>
       </div>
+      <div class="status">Status: Active / Observation Ongoing</div>
+    </div>
+  </header>
 
-      <aside class="profile-card">
-        <div class="badge">Subject Profile</div>
-
-        <!-- 🦆 YOUR IMAGE -->
-        <div class="mugshot">
-          <img src="ducker.png" alt="Baron Duck Von Doom">
+  <main>
+    <section class="hero">
+      <article class="panel feature">
+        <div class="feature-header">
+          <div class="eyebrow">Priority Bulletin</div>
+          <h1>Baron Duck Von Doom</h1>
         </div>
 
-        <ul class="facts">
-          <li><span>Alias</span><span>Ducker</span></li>
-          <li><span>Status</span><span>Active</span></li>
-          <li><span>Threat</span><span>Unknown</span></li>
-        </ul>
-      </aside>
+        <div class="feature-body">
+          <div>
+            <p class="summary">
+              A masked duck sovereign and self-appointed agent of correction, Baron Duck Von Doom advances a doctrine of slow reclamation. He does not announce conquest. He declares that the land, the water, and the creatures ignored by routine were never gone in the first place.
+            </p>
+            <p class="summary">
+              Sightings indicate symbolic duck placements, cryptic manifestos, and a growing pattern of theatrical declarations regarding human control, natural order, and “the return.” Public reaction ranges from amusement to unease.
+            </p>
+            <div class="stamp-row">
+              <div class="stamp">Field Notice</div>
+              <div class="stamp">Pattern Escalating</div>
+              <div class="stamp">Do Not Ignore</div>
+            </div>
+          </div>
 
+          <aside class="profile-card">
+            <div class="badge">Subject Profile</div>
+            <div class="mugshot">
+              <img src="ducker.png" alt="Baron Duck Von Doom">
+            </div>
+            <ul class="facts">
+              <li><span>Alias</span><span>Baron Duck Von Doom</span></li>
+              <li><span>Type</span><span>Masked Reclaimer</span></li>
+              <li><span>Symbol</span><span>Minimal Duck Sigil</span></li>
+              <li><span>Threat Style</span><span>Theatrical / Nonlinear</span></li>
+              <li><span>Known Doctrine</span><span>Nature Remembers</span></li>
+            </ul>
+          </aside>
+        </div>
+      </article>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-inner">
+        Advisory: Citizens are encouraged to remain calm, document symbols, and report unusual duck concentrations, cryptic phrases, or unexplained formations.
+      </div>
     </div>
-  </article>
-</section>
 
-</main>
+    <section class="content">
+      <article class="panel">
+        <div class="section-title">Background</div>
+        <div class="section-body">
+          Baron Duck Von Doom frames himself not as an invader, but as a revealer of what human systems refuse to acknowledge. His communications suggest a belief that structures of comfort, routine, and ownership are temporary illusions layered over a much older order.
+          <div class="callout">“This is not a beginning. It is a return.”</div>
+        </div>
+      </article>
 
-<footer class="footer">
-  Baron Duck Von Doom Archive
-</footer>
+      <article class="panel">
+        <div class="section-title">Known Indicators</div>
+        <div class="section-body">
+          <ul>
+            <li>Clusters of miniature duck markers placed in visible, deliberate positions.</li>
+            <li>Black-and-white insignia resembling a duck mask or armored avian sigil.</li>
+            <li>Use of grand declarations, monologues, and phase-based messaging.</li>
+            <li>Visual emphasis on observation, inevitability, and reclaiming space.</li>
+          </ul>
+          <div class="callout">Markers are typically symbolic rather than destructive, but their meaning is intentionally left unresolved.</div>
+        </div>
+      </article>
 
+      <article class="panel">
+        <div class="section-title">Public Guidance</div>
+        <div class="section-body">
+          This site is a fictional dossier-style parody page for creative worldbuilding. If you adapt it for a live project, keep the tone theatrical and avoid language that sounds like a real-world threat. Focus on symbols, myth, observation, and absurd villain grandeur.
+          <div class="callout">Recommended framing: strange, ominous, campy, and clearly fictional.</div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <strong>Archive Note:</strong> This page is a stylized fictional website inspired by public bulletin board aesthetics. It is intended for character lore, parody presentation, and creative storytelling around Baron Duck Von Doom.
+      <div class="muted">Deploy on GitHub Pages by saving this as <code>index.html</code> in a repository, then enabling Pages in repository settings.</div>
+    </div>
+  </footer>
 </body>
 </html>
